@@ -304,7 +304,10 @@ export default function UpdateListing() {
                 value={formData.regularPrice}
               />
               <div className="flex flex-col items-center">
-                <p>Regular Price</p>
+                <p>Regular Price </p>
+                {formData.type === "sale" && (
+                  <span className="text-xs"> (in ₹)</span>
+                )}
                 {formData.type === "rent" && (
                   <span className="text-xs">(₹ / month)</span>
                 )}
@@ -324,6 +327,9 @@ export default function UpdateListing() {
                 />
                 <div className="flex flex-col items-center">
                   <p>Discounted Price</p>
+                  {formData.type === "sale" && (
+                    <span className="text-xs"> (in ₹)</span>
+                  )}
                   {formData.type === "rent" && (
                     <span className="text-xs">(₹ / month)</span>
                   )}
